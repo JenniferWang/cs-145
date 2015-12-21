@@ -10,6 +10,8 @@ CREATE TABLE accounts (
 INSERT INTO accounts VALUES (1, 'Joe', 100.0);
 INSERT INTO accounts VALUES (2, 'Bob', 100.0);
 
-UPDATE accounts SET balance = balance - 50 WHERE owner = 'Joe';
-^C
-UPDATE accounts SET balance = balance + 50 WHERE owner = 'Bob';
+-- Note: ';' for each statement
+BEGIN;
+  UPDATE accounts SET balance = balance - 50 WHERE owner = 'Joe';
+  UPDATE accounts SET balance = balance + 50 WHERE owner = 'Bob';
+COMMIT;
