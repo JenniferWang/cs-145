@@ -9,3 +9,6 @@ UPDATE Users Set Country = NULL WHERE Country = "NULL";
 .import category.dat Category
 .import bids.dat Bids
 
+PRAGMA foreign_keys = ON;
+
+
